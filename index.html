@@ -233,8 +233,13 @@
         .stress-item {
             background: var(--page-bg);
             border-radius: 8px;
-            padding: 8px 10px;
+            padding: 10px 12px;
             border-left: 3px solid var(--text-main);
+            margin-bottom: 8px;
+        }
+        
+        .stress-item:last-child {
+            margin-bottom: 0;
         }
         
         .stress-item strong {
@@ -305,12 +310,17 @@
         
         .checkpoint-card-item {
             background: var(--page-bg);
-            border: 1px dashed var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 8px;
-            padding: 10px 12px;
+            padding: 12px 14px;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        
+        .checkpoint-card-item:last-child {
+            margin-bottom: 0;
         }
         
         .checkpoint-card-item strong {
@@ -376,8 +386,8 @@
         }
         
         .watch-screenshot-container {
-            width: 82px;
-            height: 98px;
+            width: 95px;
+            height: 114px;
             background: #111;
             border-radius: 16px;
             border: 2px solid #E4DFD5;
@@ -410,8 +420,8 @@
         .flow-arrow {
             color: var(--text-muted);
             font-weight: 900;
-            font-size: 1.1rem;
-            padding-bottom: 25px;
+            font-size: 1.25rem;
+            padding-bottom: 30px;
         }
         
         /* FOOTER BRANDING */
@@ -618,6 +628,10 @@
                                 <strong>Physical Stress & Unmonitored Vitals</strong>
                                 <p>High-energy singing combined with alcohol causes sudden cardiovascular spikes. In dark rooms, physical distress frequently goes unnoticed by companions.</p>
                             </div>
+                            <div class="stress-item" style="border-left-color: var(--accent-rust);">
+                                <strong>Chaotic Social & Payment Coordination</strong>
+                                <p>Managing food orders and splitting checks while intoxicated generates social friction and delays, causing payment embarrassment at the end of the evening.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -667,10 +681,17 @@
                             </div>
                         </div>
                         
-                        <div style="background: var(--accent-rust-light); border-radius: 8px; padding: 10px; border: 1px dashed var(--accent-rust); margin-top: 10px;">
-                            <strong style="font-size: 0.74rem; color: var(--accent-rust); display: block; margin-bottom: 2px;">🎨 Visual Design Consistency</strong>
-                            <p style="font-size: 0.68rem; line-height: 1.3; color: var(--text-main);">
+                        <div style="background: var(--accent-rust-light); border-radius: 8px; padding: 12px; border: 1px dashed var(--accent-rust); margin-top: 12px; margin-bottom: 12px;">
+                            <strong style="font-size: 0.76rem; color: var(--accent-rust); display: block; margin-bottom: 3px;">🎨 Visual Design Consistency</strong>
+                            <p style="font-size: 0.68rem; line-height: 1.35; color: var(--text-main);">
                                 Adopts a deep charcoal canvas background to support OLED energy conservation, paired with rich sunset red-orange gradients (`#E0533C` to `#11161B`) for warm room visuals and vibrant active blue triggers.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #FAF8F5; border-radius: 8px; padding: 12px; border: 1px solid var(--card-border);">
+                            <strong style="font-size: 0.76rem; color: var(--text-main); display: block; margin-bottom: 3px;">📊 Usability Evaluation Success (SUS)</strong>
+                            <p style="font-size: 0.68rem; line-height: 1.35; color: var(--text-muted);">
+                                System Usability Scale (SUS) scores showed a significant increase from an initial <strong>62.4</strong> (Round 1) to a final <strong>85.8</strong> (Round 3), demonstrating substantial improvement in task completion rate.
                             </p>
                         </div>
                     </div>
@@ -703,6 +724,13 @@
                                 <strong><span class="badge">4</span> Frictionless Wrist-based Bill Split</strong>
                                 <p>Removes social awkwardness. Displays clear personal shares directly on the wrist, synchronizing payments instantly through equal splits without pulling out a mobile device.</p>
                             </div>
+                        </div>
+                        
+                        <div style="background: #FAF8F5; border-radius: 8px; padding: 12px; border: 1px solid var(--card-border); margin-top: 12px;">
+                            <strong style="font-size: 0.76rem; color: var(--text-main); display: block; margin-bottom: 3px;">🔧 Sensor & Physical Integrations</strong>
+                            <p style="font-size: 0.68rem; line-height: 1.35; color: var(--text-muted);">
+                                Uses the watch's built-in <strong>Optical PPG sensor</strong> for heart rate tracking, <strong>linear resonant actuator (LRA)</strong> for tactile confirmations, and <strong>GPS triangulation</strong> for safe cab dispatch.
+                            </p>
                         </div>
                     </div>
                 </div>
