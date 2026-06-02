@@ -154,6 +154,8 @@
             padding-top: 14px;
             display: flex;
             flex-direction: column;
+            height: 100%;
+            box-sizing: border-box;
         }
         
         .editorial-section-title {
@@ -240,7 +242,9 @@
         .pain-points-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 14px;
+            flex-grow: 1;
+            justify-content: space-between;
         }
         
         .pain-point-card {
@@ -248,7 +252,7 @@
             border: 1px solid var(--card-border);
             border-left: 4.5px solid var(--text-main);
             border-radius: 8px;
-            padding: 11px 13px;
+            padding: 12px 15px;
             box-shadow: var(--shadow-sm);
         }
         
