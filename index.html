@@ -674,6 +674,23 @@
             margin-top: 2px;
         }
         
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #F0ECE4;
+            border: 1px solid #D6CEBE;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--accent-rust);
+            display: inline-block;
+            vertical-align: middle;
+            letter-spacing: 0.05em;
+            word-break: break-all;
+            white-space: pre-wrap;
+            max-width: 100%;
+        }
+        
         /* PRINT MEDIA STYLES FOR EXACT 2-PAGE A4 EXPORT */
         @media print {
             body {
@@ -727,7 +744,7 @@
                 <div class="info-area">
                     Course: <strong>IDEA9105 Interaction Design</strong><br>
                     Project Code: <strong>9105-SmartwearCompanion</strong><br>
-                    Student Name: <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> &nbsp;|&nbsp; Student ID: <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                    Student Name: <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> &nbsp;|&nbsp; Student ID: <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
                 </div>
             </div>
             
@@ -739,7 +756,7 @@
                         <span class="num">01</span>
                         <span>Design Solution</span>
                     </div>
-                    <div class="design-solution-split">
+                    <div class="design-solution-split" style="margin-bottom: 14px;">
                         <div class="solution-text-block">
                             <p class="editorial-lead">
                                 A wrist-worn smartwatch companion designed to mitigate the auditory, cognitive, and physiological barriers inherent to high-decibel KTV social environments.
@@ -747,17 +764,37 @@
                             <p class="editorial-body">
                                 By offloading high-friction group configuration tasks from smartphones to a tactile, glanceable wearable interface, the system prioritizes immediate, context-aware micro-interactions.
                             </p>
-                            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border);">
-                                <strong style="font-size: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Target Environment Constraints:</strong>
-                                <p style="font-size: 0.66rem; line-height: 1.35; color: var(--text-muted);">
-                                    Auditory overload (ambient noise >85dB), extreme low-light, alcohol-induced cognitive and psychomotor degradation, and high-friction transportation/payment logistics upon event conclusion.
-                                </p>
-                            </div>
                         </div>
                         <div class="solution-mockup">
                             <img src="./assets/screen_1.png" alt="Watch Home Screen Mock-up">
                             <div class="mockup-caption">
                                 <strong>Visual Interface:</strong> Wearable dashboard detailing room telemetry, real-time audio playback metadata, and high-contrast touch targets.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="constraints-container" style="margin-top: 15px;">
+                        <strong style="font-size: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px; font-family: 'Outfit', sans-serif;">Target Environment Constraints:</strong>
+                        <div class="constraints-list" style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                                <span style="font-size: 0.8rem; line-height: 1.1; margin-top: 1px;">🔊</span>
+                                <div>
+                                    <strong style="font-size: 0.72rem; color: var(--text-main); font-family: 'Outfit', sans-serif; display: block; margin-bottom: 1px;">Auditory Overload (&gt;85dB)</strong>
+                                    <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">Ambient noise masks normal audio alarms, requiring high-intensity haptics for alerts.</p>
+                                </div>
+                            </div>
+                            <div style="background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                                <span style="font-size: 0.8rem; line-height: 1.1; margin-top: 1px;">🌙</span>
+                                <div>
+                                    <strong style="font-size: 0.72rem; color: var(--text-main); font-family: 'Outfit', sans-serif; display: block; margin-bottom: 1px;">Extreme Low-Light Rooms</strong>
+                                    <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">Dimly lit rooms demand high-contrast OLED dark canvases and oversized tap targets.</p>
+                                </div>
+                            </div>
+                            <div style="background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                                <span style="font-size: 0.8rem; line-height: 1.1; margin-top: 1px;">🥴</span>
+                                <div>
+                                    <strong style="font-size: 0.72rem; color: var(--text-main); font-family: 'Outfit', sans-serif; display: block; margin-bottom: 1px;">Cognitive & Motor Decline</strong>
+                                    <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">Intoxication degrades coordination, necessitating 2-second hold-to-confirm delay buffers.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -971,7 +1008,7 @@
                 <div class="info-area">
                     Course: <strong>IDEA9105 Interaction Design</strong><br>
                     Evidence Level: <strong>Comprehensive Academic Submission</strong><br>
-                    Document Code: <strong>IDEA9105–A4–SMARTWEAR–APPENDIX</strong>
+                    Student Name: <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> &nbsp;|&nbsp; Student ID: <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
                 </div>
             </div>
             
@@ -1150,16 +1187,23 @@
                 <div class="bottom-panel">
                     <h4>Interactive Prototypes</h4>
                     <p>Access the high-fidelity interactive companion watch prototype via the verified path below:</p>
-                    <div class="link-box">https://www.figma.com/proto/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?node-id=102-39&scaling=scale-down&starting-point-node-id=102%3A39</div>
+                    <div style="margin-top: 6px;">
+                        <code>https://www.figma.com/proto/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                    </div>
                 </div>
                 
                 <!-- BIBLIOGRAPHY -->
                 <div class="bottom-panel">
                     <h4>Academic References</h4>
-                    <p style="font-size: 0.68rem; line-height: 1.3;">
+                    <p style="font-size: 0.65rem; line-height: 1.25;">
                         Batchu, V. (2020). Designing better Apple Watch apps. <i>UX Collective</i>. https://uxdesign.cc/designing-wearable-apps-ef941d11a166<br><br>
+                        Brewster, S. A., Lumsden, J., Bell, M., Hall, M., & Tasker, S. (2003). Multimodal 'strong' haptics for mobile devices. In <i>ACM CHI</i>, 173-180.<br><br>
+                        ISO 9241-11 (1998). <i>Ergonomic requirements for office work with visual display terminals (VDTs) — Part 11: Guidance on usability</i>.<br><br>
+                        Nielsen, J. (1994). <i>Usability Inspection Methods</i>. John Wiley & Sons.<br><br>
+                        Noman, A., & Carter, E. (2021). Wearable usability under environmental stressors. <i>Int. J. Hum.-Comput. Int.</i>, 37(8), 711-725.<br><br>
+                        Nourbakhsh, N., Wang, Y., & Chen, F. (2012). Physiological metrics in mobile interaction. <i>IEEE Trans. Hum.-Mach. Syst.</i>, 42(5), 490-502.<br><br>
                         Ogbanufe, O., & Gerhart, N. (2020). Smartwatch identity on deep use. <i>Information Systems Journal</i>, 30(6), 929-1042.<br><br>
-                        Nielsen, J. (1994). <i>Usability Inspection Methods</i>. John Wiley & Sons.
+                        Starner, T. (2001). The challenges of wearable computing. <i>IEEE Computer</i>, 34(1), 44-53.
                     </p>
                 </div>
                 
