@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split Mate: KTV Smartwear Companion</title>
+    <title>KTV Helper: Smartwear Companion</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,25 +128,19 @@
             font-weight: 600;
         }
         
-        /* ASYMMETRIC GRID SYSTEM */
-        .editorial-grid {
+        /* GRID ROWS (To prevent height-imbalance empty spaces) */
+        .grid-row-1 {
             display: grid;
-            grid-template-columns: 1.78fr 1.02fr;
-            gap: 30px;
-            flex-grow: 1;
-            margin-bottom: 18px;
+            grid-template-columns: 1.62fr 1.38fr;
+            gap: 28px;
+            margin-bottom: 20px;
         }
         
-        .col-main {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .col-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .grid-row-2 {
+            display: grid;
+            grid-template-columns: 1.62fr 1.38fr;
+            gap: 28px;
+            margin-bottom: 20px;
         }
         
         /* EDITORIAL SECTIONS */
@@ -686,12 +680,12 @@
         <div class="a4-page" id="page-poster">
             <div class="page-header-line">
                 <span>IDEA9105 Academic Design Presentation</span>
-                <span>Split Mate Smartwear Companion Poster</span>
+                <span>KTV Helper Smartwear Companion Poster</span>
             </div>
             
             <div class="poster-header">
                 <div class="title-area">
-                    <h1>Split Mate: KTV Smartwear Companion</h1>
+                    <h1>KTV Helper: Smartwear Companion</h1>
                     <p class="subtitle">Wrist-Based Interaction Design for Real-Time Service Requests, Physiological Safeguards, and Split-Billing</p>
                 </div>
                 <div class="info-area">
@@ -701,173 +695,170 @@
                 </div>
             </div>
             
-            <!-- ASYMMETRIC GRID -->
-            <div class="editorial-grid">
-                
-                <!-- LEFT COLUMN (2/3 WIDTH) -->
-                <div class="col-main">
-                    
-                    <!-- 1. DESIGN SOLUTION -->
-                    <div class="editorial-section">
-                        <div class="editorial-section-title">
-                            <span class="num">01</span>
-                            <span>Design Solution</span>
-                        </div>
-                        <div class="design-solution-split">
-                            <div class="solution-text-block">
-                                <p class="editorial-lead">
-                                    An elegant wrist-based watch companion designed specifically to bypass the auditory, cognitive, and physical challenges of high-decibel KTV entertainment environments.
-                                </p>
-                                <p class="editorial-body">
-                                    Moving complex group setup and administrative friction off users' smartphones and onto a simplified, tactile wrist interface optimized for immediate, context-aware actions.
-                                </p>
-                            </div>
-                            <div class="solution-mockup">
-                                <img src="./assets/screen_1.png" alt="Watch Home Screen Mock-up">
-                                <div class="mockup-caption">
-                                    <strong>Physical Mock-up:</strong> Active Room 218 details, live song metadata, and quick action bubbles.
-                                </div>
-                            </div>
-                        </div>
+            <!-- ROW 1: DESIGN SOLUTION & DEEPENED PAIN POINTS -->
+            <div class="grid-row-1">
+                <!-- 1. DESIGN SOLUTION -->
+                <div class="editorial-section">
+                    <div class="editorial-section-title">
+                        <span class="num">01</span>
+                        <span>Design Solution</span>
                     </div>
-                    
-                    <!-- 3. ITERATIONS & REFLECTIONS -->
-                    <div class="editorial-section">
-                        <div class="editorial-section-title">
-                            <span class="num">03</span>
-                            <span>Iterations & Reflections</span>
-                        </div>
-                        <p class="desc" style="margin-bottom: 8px;">Refining smartwatch screen dimensions and interaction models across development cycles.</p>
-                        
-                        <div class="timeline-container">
-                            <div class="timeline-card">
-                                <div class="circle-marker"></div>
-                                <div class="header">
-                                    <strong>Round 1: Grid</strong>
-                                    <span class="tag">Usability</span>
-                                </div>
-                                <p>Replaced standard list rows with large, high-contrast tap bubbles in a symmetrical 2x2 grid to enable rapid muscle-memory selection.</p>
-                            </div>
-                            
-                            <div class="timeline-card">
-                                <div class="circle-marker"></div>
-                                <div class="header">
-                                    <strong>Round 2: Alerts</strong>
-                                    <span class="tag">Efficiency</span>
-                                </div>
-                                <p>Introduced intermediate confirmation screen states (Calling... / Sent!) to prevent accidental double-tap service triggers.</p>
-                            </div>
-                            
-                            <div class="timeline-card">
-                                <div class="circle-marker"></div>
-                                <div class="header">
-                                    <strong>Round 3: Ride</strong>
-                                    <span class="tag">Safety</span>
-                                </div>
-                                <p>Bypassed typing by auto-hailing to home coordinates with instant visual feedback of the incoming driver plate code.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-highlights">
-                            <div class="highlight-panel" style="background: var(--accent-rust-light); border-color: var(--accent-rust); border-style: dashed;">
-                                <strong style="font-size: 0.74rem; color: var(--accent-rust); display: block; margin-bottom: 2px;">🎨 Visual Design Consistency</strong>
-                                <p style="font-size: 0.66rem; line-height: 1.35; color: var(--text-main);">
-                                    Adopts a deep charcoal canvas background to support OLED energy conservation, paired with rich sunset red-orange gradients (`#E0533C` to `#11161B`) for warm room visuals and vibrant active blue triggers.
-                                </p>
-                            </div>
-                            <div class="highlight-panel">
-                                <strong style="font-size: 0.74rem; color: var(--text-main); display: block; margin-bottom: 2px;">📊 Usability Evaluation Success (SUS)</strong>
+                    <div class="design-solution-split">
+                        <div class="solution-text-block">
+                            <p class="editorial-lead">
+                                An elegant wrist-based watch companion designed specifically to bypass the auditory, cognitive, and physical challenges of high-decibel KTV entertainment environments.
+                            </p>
+                            <p class="editorial-body">
+                                Moving complex group setup and administrative friction off users' smartphones and onto a simplified, tactile wrist interface optimized for immediate, context-aware actions.
+                            </p>
+                            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border);">
+                                <strong style="font-size: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Target Environment Constraints:</strong>
                                 <p style="font-size: 0.66rem; line-height: 1.35; color: var(--text-muted);">
-                                    System Usability Scale (SUS) scores showed a significant increase from an initial <strong>62.4</strong> (Round 1) to a final <strong>85.8</strong> (Round 3), demonstrating substantial improvement in task completion rate.
+                                    High-decibel environmental noise (>85dB), low-light conditions, cognitive/fine-motor distraction, and urgent transport/payment logistics at social event completion.
                                 </p>
                             </div>
                         </div>
+                        <div class="solution-mockup">
+                            <img src="./assets/screen_1.png" alt="Watch Home Screen Mock-up">
+                            <div class="mockup-caption">
+                                <strong>Physical Mock-up:</strong> Active Room 218 details, live song metadata, and quick action bubbles.
+                            </div>
+                        </div>
                     </div>
-                    
                 </div>
                 
-                <!-- RIGHT COLUMN (1/3 WIDTH) -->
-                <div class="col-sidebar">
+                <!-- 2. DEEPENED DESIGN PAIN POINTS -->
+                <div class="editorial-section">
+                    <div class="editorial-section-title">
+                        <span class="num">02</span>
+                        <span>Deepened Design Pain Points</span>
+                    </div>
+                    <p class="desc">Granular analysis outlining why standard mobile interfaces fail in high-energy social environments.</p>
                     
-                    <!-- 2. DEEPENED DESIGN PAIN POINTS -->
-                    <div class="editorial-section">
-                        <div class="editorial-section-title">
-                            <span class="num">02</span>
-                            <span>Deepened Design Pain Points</span>
+                    <div class="pain-points-list">
+                        <div class="pain-point-card">
+                            <strong>Auditory Overload & Isolation</strong>
+                            <p>KTV rooms exceed 85–90 dB, rendering voice commands useless and drowning out standard audio alerts.</p>
                         </div>
-                        <p class="desc">Granular analysis outlining why standard mobile interfaces fail in high-energy social environments.</p>
+                        <div class="pain-point-card" style="border-left-color: var(--accent-rust);">
+                            <strong>Cognitive & Fine-Motor Degradation</strong>
+                            <p>Intoxication impairs motor coordination. Navigating nested phone menus or typing split amounts becomes a major hazard.</p>
+                        </div>
+                        <div class="pain-point-card" style="border-left-color: var(--text-muted);">
+                            <strong>Physical Stress & Vitals</strong>
+                            <p>High-energy singing combined with alcohol causes sudden cardiovascular spikes, frequently going unnoticed.</p>
+                        </div>
+                        <div class="pain-point-card" style="border-left-color: var(--accent-rust);">
+                            <strong>Chaotic Social Coordination</strong>
+                            <p>Managing food orders and splitting checks while intoxicated generates social friction and delays.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ROW 2: ITERATIONS & CHECKPOINTS -->
+            <div class="grid-row-2">
+                <!-- 3. ITERATIONS & REFLECTIONS -->
+                <div class="editorial-section">
+                    <div class="editorial-section-title">
+                        <span class="num">03</span>
+                        <span>Iterations & Reflections</span>
+                    </div>
+                    <p class="desc" style="margin-bottom: 8px;">Refining smartwatch screen dimensions and interaction models across development cycles.</p>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-card">
+                            <div class="circle-marker"></div>
+                            <div class="header">
+                                <strong>Round 1: Grid</strong>
+                                <span class="tag">Usability</span>
+                            </div>
+                            <p>Replaced standard list rows with large, high-contrast tap bubbles in a symmetrical 2x2 grid to enable rapid muscle-memory selection.</p>
+                        </div>
                         
-                        <div class="pain-points-list">
-                            <div class="pain-point-card">
-                                <strong>Auditory Overload & Isolation</strong>
-                                <p>KTV rooms exceed 85–90 dB, rendering voice commands useless and drowning out standard audio alerts.</p>
+                        <div class="timeline-card">
+                            <div class="circle-marker"></div>
+                            <div class="header">
+                                <strong>Round 2: Alerts</strong>
+                                <span class="tag">Efficiency</span>
                             </div>
-                            <div class="pain-point-card" style="border-left-color: var(--accent-rust);">
-                                <strong>Cognitive & Fine-Motor Degradation</strong>
-                                <p>Intoxication impairs motor coordination. Navigating nested phone menus or typing split amounts becomes a major hazard.</p>
+                            <p>Introduced intermediate confirmation screen states (Calling... / Sent!) to prevent accidental double-tap service triggers.</p>
+                        </div>
+                        
+                        <div class="timeline-card">
+                            <div class="circle-marker"></div>
+                            <div class="header">
+                                <strong>Round 3: Ride</strong>
+                                <span class="tag">Safety</span>
                             </div>
-                            <div class="pain-point-card" style="border-left-color: var(--text-muted);">
-                                <strong>Physical Stress & Vitals</strong>
-                                <p>High-energy singing combined with alcohol causes sudden cardiovascular spikes, frequently going unnoticed.</p>
-                            </div>
-                            <div class="pain-point-card" style="border-left-color: var(--accent-rust);">
-                                <strong>Chaotic Social Coordination</strong>
-                                <p>Managing food orders and splitting checks while intoxicated generates social friction and delays.</p>
-                            </div>
+                            <p>Bypassed typing by auto-hailing to home coordinates with instant visual feedback of the incoming driver plate code.</p>
                         </div>
                     </div>
                     
-                    <!-- 4. KEY VISUAL CHECKPOINTS -->
-                    <div class="editorial-section">
-                        <div class="editorial-section-title">
-                            <span class="num">04</span>
-                            <span>Key Visual Checkpoints</span>
+                    <div class="timeline-highlights">
+                        <div class="highlight-panel" style="background: var(--accent-rust-light); border-color: var(--accent-rust); border-style: dashed;">
+                            <strong style="font-size: 0.74rem; color: var(--accent-rust); display: block; margin-bottom: 2px;">🎨 Visual Design Consistency</strong>
+                            <p style="font-size: 0.66rem; line-height: 1.35; color: var(--text-main);">
+                                Adopts a deep charcoal canvas background to support OLED energy conservation, paired with rich sunset red-orange gradients (`#E0533C` to `#11161B`) for warm room visuals and vibrant active blue triggers.
+                            </p>
                         </div>
-                        
-                        <div class="checkpoints-list">
-                            <div class="checkpoint-card">
-                                <div class="badge">1</div>
-                                <div class="checkpoint-card-content">
-                                    <strong>Tactile Room Service</strong>
-                                    <p>issues silent water requests to staff, confirming with a wrist haptic vibration.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="checkpoint-card">
-                                <div class="badge">2</div>
-                                <div class="checkpoint-card-content">
-                                    <strong>Physical Safety Net (Care+)</strong>
-                                    <p>Integrates PPG sensors to track heart rate spikes, prompting peer alerts.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="checkpoint-card">
-                                <div class="badge">3</div>
-                                <div class="checkpoint-card-content">
-                                    <strong>Zero-Setup Safe Ride</strong>
-                                    <p>A single tap requests a cab to the user's home, displaying driver info.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="checkpoint-card">
-                                <div class="badge">4</div>
-                                <div class="checkpoint-card-content">
-                                    <strong>Wrist-based Bill Split</strong>
-                                    <p>Displays clear personal shares directly on the wrist, synchronizing payments.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="highlight-panel" style="margin-top: 10px; padding: 10px 12px; background: #FAF8F5; border: 1px solid var(--card-border);">
-                            <strong style="font-size: 0.74rem; color: var(--text-main); display: block; margin-bottom: 2px;">🔧 Sensor & Physical Integrations</strong>
-                            <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">
-                                Uses built-in <strong>Optical PPG sensor</strong> for heart rate tracking, <strong>linear resonant actuator (LRA)</strong> for haptic prompts, and <strong>GPS</strong> for safe dispatch.
+                        <div class="highlight-panel">
+                            <strong style="font-size: 0.74rem; color: var(--text-main); display: block; margin-bottom: 2px;">📊 Usability Evaluation Success (SUS)</strong>
+                            <p style="font-size: 0.66rem; line-height: 1.35; color: var(--text-muted);">
+                                System Usability Scale (SUS) scores showed a significant increase from an initial <strong>62.4</strong> (Round 1) to a final <strong>85.8</strong> (Round 3), demonstrating substantial improvement in task completion rate.
                             </p>
                         </div>
                     </div>
-                    
                 </div>
                 
+                <!-- 4. KEY VISUAL CHECKPOINTS -->
+                <div class="editorial-section">
+                    <div class="editorial-section-title">
+                        <span class="num">04</span>
+                        <span>Key Visual Checkpoints</span>
+                    </div>
+                    
+                    <div class="checkpoints-list">
+                        <div class="checkpoint-card">
+                            <div class="badge">1</div>
+                            <div class="checkpoint-card-content">
+                                <strong>Tactile Room Service</strong>
+                                <p>issues silent water requests to staff, confirming with a wrist haptic vibration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checkpoint-card">
+                            <div class="badge">2</div>
+                            <div class="checkpoint-card-content">
+                                <strong>Physical Safety Net (Care+)</strong>
+                                <p>Integrates PPG sensors to track heart rate spikes, prompting peer alerts.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checkpoint-card">
+                            <div class="badge">3</div>
+                            <div class="checkpoint-card-content">
+                                <strong>Zero-Setup Safe Ride</strong>
+                                <p>A single tap requests a cab to the user's home, displaying driver info.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checkpoint-card">
+                            <div class="badge">4</div>
+                            <div class="checkpoint-card-content">
+                                <strong>Wrist-based Bill Split</strong>
+                                <p>Displays clear personal shares directly on the wrist, synchronizing payments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-panel" style="margin-top: 10px; padding: 10px 12px; background: #FAF8F5; border: 1px solid var(--card-border);">
+                        <strong style="font-size: 0.74rem; color: var(--text-main); display: block; margin-bottom: 2px;">🔧 Sensor & Physical Integrations</strong>
+                        <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">
+                            Uses built-in <strong>Optical PPG sensor</strong> for heart rate tracking, <strong>linear resonant actuator (LRA)</strong> for haptic prompts, and <strong>GPS</strong> for safe dispatch.
+                        </p>
+                    </div>
+                </div>
             </div>
             
             <!-- SECTION 5: PRIMARY WIREFLOW JOURNEY -->
@@ -924,7 +915,7 @@
             </div>
             
             <div class="footer-note">
-                <span>Split Mate Smartwear KTV Companion Poster | Exhibition Layout</span>
+                <span>KTV Helper Smartwear Companion Poster | Exhibition Layout</span>
                 <span>Page 1 of 2 | Supporting Evidence Level: High</span>
             </div>
         </div>
@@ -938,7 +929,7 @@
             
             <div class="poster-header" style="border-bottom: 1px solid var(--card-border); padding-bottom: 12px; margin-bottom: 15px;">
                 <div class="title-area">
-                    <h1>Split Mate: Smartwear Companion Appendix</h1>
+                    <h1>KTV Helper: Smartwear Companion Appendix</h1>
                     <p class="subtitle">Supporting Evidence: High-Fidelity Interface Sets, Hand-Drawn Sketches, and Academic References</p>
                 </div>
                 <div class="info-area">
@@ -1139,7 +1130,7 @@
             </div>
             
             <div class="footer-note" style="margin-top: 15px;">
-                <span>Split Mate Smartwear KTV Companion Appendix | Prepared for Grade Verification</span>
+                <span>KTV Helper Smartwear Companion Appendix | Prepared for Grade Verification</span>
                 <span>Page 2 of 2 | Supporting Evidence Density: Max</span>
             </div>
         </div>
