@@ -1,0 +1,7 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Workspace screenshots (keep assets, ignore temporary rendering checks)
+asymmetric_preview_*.png
+final_editorial_*.png
