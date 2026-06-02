@@ -525,8 +525,8 @@
         }
         
         .appendix-screen-item .screen-preview-box {
-            width: 90px;
-            height: 108px;
+            width: 82px;
+            height: 98px;
             background: #111;
             border-radius: 16px;
             border: 2px solid var(--watch-border);
@@ -580,7 +580,7 @@
         
         .sketch-card img {
             width: 100%;
-            height: 150px;
+            height: 135px;
             object-fit: cover;
             border-radius: 6px;
             border: 1px solid var(--divider-color);
@@ -611,7 +611,7 @@
         
         .heuristic-table th, .heuristic-table td {
             border: 1px solid var(--card-border);
-            padding: 10px 12px;
+            padding: 8px 10px;
             font-size: 0.72rem;
             text-align: left;
             vertical-align: top;
@@ -630,18 +630,18 @@
         .appendix-bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1.05fr 1fr;
-            gap: 16px;
+            gap: 12px;
         }
         
         .bottom-panel {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 10px;
-            padding: 12px 14px;
+            padding: 10px 12px;
             box-shadow: var(--shadow-sm);
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
         
         .bottom-panel h4 {
@@ -672,6 +672,24 @@
             font-family: monospace;
             word-break: break-all;
             margin-top: 2px;
+        }
+        
+        .bottom-panel code {
+            display: block;
+            width: 100%;
+            font-size: 0.61rem;
+            line-height: 1.25;
+            padding: 4px 6px;
+            box-sizing: border-box;
+            background-color: #F0ECE4;
+            border: 1px solid #D6CEBE;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--accent-rust);
+            word-break: break-all;
+            white-space: pre-wrap;
+            margin-top: 3px;
+            letter-spacing: 0.02em;
         }
         
         code {
@@ -810,20 +828,20 @@
                     
                     <div class="pain-points-list">
                         <div class="pain-point-card">
-                            <strong>Auditory Masking & Spatial Isolation</strong>
-                            <p>High-decibel environments (85–95 dB) render voice-based interaction ineffective and mask standard auditory notifications, necessitating alternative feedback channels.</p>
+                            <strong>Auditory Masking & Spatial Isolation (Noisy Environment)</strong>
+                            <p>High-decibel ambient noise (85–95 dB) in KTV rooms masks standard mobile acoustic alerts and voice commands, rendering phone calls and voice interactions unusable. This spatial isolation leads to missed notifications, severe delays, and low service request efficiency.</p>
                         </div>
                         <div class="pain-point-card" style="border-left-color: var(--accent-rust);">
-                            <strong>Cognitive & Psychomotor Impairment</strong>
-                            <p>Intoxication degrades fine-motor control and executive function, making complex menu hierarchies and precise alphanumeric input high-friction and error-prone.</p>
+                            <strong>Cognitive & Psychomotor Impairment (Intoxication)</strong>
+                            <p>Alcohol intake slows reactions and degrades executive function, spatial orientation, and fine-motor control. Accessing multi-level smartphone menus or entering precise alphanumeric inputs becomes extremely cumbersome, high-friction, and error-prone.</p>
                         </div>
                         <div class="pain-point-card" style="border-left-color: var(--text-muted);">
-                            <strong>Undetected Physiological Strain</strong>
-                            <p>The combination of high-exertion vocal performance and alcohol consumption causes acute cardiovascular spikes, which go undetected by the user without continuous passive monitoring.</p>
+                            <strong>Undetected Cardiovascular Strain (Decreased Security)</strong>
+                            <p>The combination of vocal exertion, high-energy movement, and alcohol triggers rapid, undetected heart rate spikes. Without continuous passive wearable sensor tracking, users remain unaware of physiological danger thresholds, compromising safety.</p>
                         </div>
                         <div class="pain-point-card" style="border-left-color: var(--accent-rust);">
-                            <strong>Group Coordination Friction</strong>
-                            <p>Managing service requests and dividing bills during late-stage social events introduces significant cognitive load, resulting in social friction and payment delays.</p>
+                            <strong>Group Coordination & Billing Friction (Chaotic Collaboration)</strong>
+                            <p>Dividing bill totals and hailing rides at late-stage social gatherings creates chaotic collaboration. Intoxicated, fatigued users struggle with calculations, leading to payment disputes, social friction, and disrupted positive group experiences.</p>
                         </div>
                     </div>
                 </div>
@@ -1185,9 +1203,14 @@
                 
                 <!-- FIGMA LINKS -->
                 <div class="bottom-panel">
-                    <h4>Interactive Prototypes</h4>
-                    <p>Access the high-fidelity interactive companion watch prototype via the verified path below:</p>
+                    <h4>Interactive Prototypes & Files</h4>
+                    <p>Access the high-fidelity design workspace and interactive smartwatch companion prototype via the verified paths below:</p>
+                    <div style="margin-top: 4px;">
+                        <span style="font-size: 0.65rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 2px;">Figma Design Workspace:</span>
+                        <code>https://www.figma.com/design/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?t=3a3D1PHtBif12Ceh-1</code>
+                    </div>
                     <div style="margin-top: 6px;">
+                        <span style="font-size: 0.65rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 2px;">Interactive Watch Prototype:</span>
                         <code>https://www.figma.com/proto/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
                     </div>
                 </div>
@@ -1195,16 +1218,16 @@
                 <!-- BIBLIOGRAPHY -->
                 <div class="bottom-panel">
                     <h4>Academic References</h4>
-                    <p style="font-size: 0.65rem; line-height: 1.25;">
-                        Batchu, V. (2020). Designing better Apple Watch apps. <i>UX Collective</i>. https://uxdesign.cc/designing-wearable-apps-ef941d11a166<br><br>
-                        Brewster, S. A., Lumsden, J., Bell, M., Hall, M., & Tasker, S. (2003). Multimodal 'strong' haptics for mobile devices. In <i>ACM CHI</i>, 173-180.<br><br>
-                        ISO 9241-11 (1998). <i>Ergonomic requirements for office work with visual display terminals (VDTs) — Part 11: Guidance on usability</i>.<br><br>
-                        Nielsen, J. (1994). <i>Usability Inspection Methods</i>. John Wiley & Sons.<br><br>
-                        Noman, A., & Carter, E. (2021). Wearable usability under environmental stressors. <i>Int. J. Hum.-Comput. Int.</i>, 37(8), 711-725.<br><br>
-                        Nourbakhsh, N., Wang, Y., & Chen, F. (2012). Physiological metrics in mobile interaction. <i>IEEE Trans. Hum.-Mach. Syst.</i>, 42(5), 490-502.<br><br>
-                        Ogbanufe, O., & Gerhart, N. (2020). Smartwatch identity on deep use. <i>Information Systems Journal</i>, 30(6), 929-1042.<br><br>
-                        Starner, T. (2001). The challenges of wearable computing. <i>IEEE Computer</i>, 34(1), 44-53.
-                    </p>
+                    <div style="font-size: 0.61rem; line-height: 1.25; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px;">
+                        <div>Batchu, V. (2020). Designing better Apple Watch apps. <i>UX Collective</i>. https://uxdesign.cc/designing-wearable-apps-ef941d11a166</div>
+                        <div>Brewster, S. A., Lumsden, J., Bell, M., Hall, M., & Tasker, S. (2003). Multimodal 'strong' haptics for mobile devices. In <i>ACM CHI</i>, 173-180.</div>
+                        <div>ISO 9241-11 (1998). <i>Ergonomic requirements for office work with visual display terminals (VDTs) — Part 11: Guidance on usability</i>.</div>
+                        <div>Nielsen, J. (1994). <i>Usability Inspection Methods</i>. John Wiley & Sons.</div>
+                        <div>Noman, A., & Carter, E. (2021). Wearable usability under environmental stressors. <i>Int. J. Hum.-Comput. Int.</i>, 37(8), 711-725.</div>
+                        <div>Nourbakhsh, N., Wang, Y., & Chen, F. (2012). Physiological metrics in mobile interaction. <i>IEEE Trans. Hum.-Mach. Syst.</i>, 42(5), 490-502.</div>
+                        <div>Ogbanufe, O., & Gerhart, N. (2020). Smartwatch identity on deep use. <i>Information Systems Journal</i>, 30(6), 929-1042.</div>
+                        <div>Starner, T. (2001). The challenges of wearable computing. <i>IEEE Computer</i>, 34(1), 44-53.</div>
+                    </div>
                 </div>
                 
             </div>
