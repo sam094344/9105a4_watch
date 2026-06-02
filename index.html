@@ -26,6 +26,8 @@
             
             --shadow-sm: 0 4px 12px rgba(120, 115, 105, 0.05);
             --shadow-md: 0 8px 24px rgba(120, 115, 105, 0.08);
+            
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         * {
@@ -41,7 +43,230 @@
             line-height: 1.45;
             -webkit-font-smoothing: antialiased;
             padding: 45px 0;
+            transition: var(--transition-smooth);
+            position: relative;
         }
+        
+        /* Ambient Paper Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0%200%20200%20200'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='noiseFilter'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.75'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23noiseFilter)'%20opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Interactive Utilities Panel */
+        .interactive-utility-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1190px;
+            padding: 12px 24px;
+            background: rgba(250, 248, 245, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(220, 215, 205, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(120, 115, 105, 0.08);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-main);
+            margin-bottom: -15px;
+            z-index: 100;
+            transition: var(--transition-smooth);
+        }
+        
+        .interactive-utility-bar .utility-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .interactive-utility-bar .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 99px;
+            background: #BE5C4A;
+            box-shadow: 0 0 8px #BE5C4A;
+            animation: pulseGlow 1.5s infinite alternate;
+        }
+        
+        @keyframes pulseGlow {
+            from { transform: scale(0.9); opacity: 0.6; }
+            to { transform: scale(1.15); opacity: 1; }
+        }
+        
+        .utility-tabs {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            font-family: inherit;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--text-main);
+            color: var(--page-bg);
+            border-color: var(--text-main);
+        }
+        
+        /* Dark Theme Override */
+        body.theme-dark {
+            --bg-workspace: #121316;
+            --page-bg: #1A1B1F;
+            --card-bg: #23252B;
+            --card-border: #2F323A;
+            --card-hover-border: #BE5C4A;
+            --text-main: #F2EDE4;
+            --text-muted: #95A1A8;
+            --accent-rust-light: #321F1D;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+        
+        body.theme-dark .interactive-utility-bar {
+            background: rgba(26, 27, 31, 0.85);
+            border-color: rgba(47, 50, 58, 0.5);
+            color: #F2EDE4;
+        }
+        
+        body.theme-dark .tab-btn {
+            color: #95A1A8;
+            border-color: #2F323A;
+        }
+        
+        body.theme-dark .tab-btn.active, body.theme-dark .tab-btn:hover {
+            background: #BE5C4A;
+            color: #F2EDE4;
+            border-color: #BE5C4A;
+        }
+        
+        /* Interactive Hover Uplifts */
+        .pain-point-card, .timeline-card, .checkpoint-card, .sketch-card, .bottom-panel, .appendix-screen-item {
+            transition: var(--transition-smooth);
+        }
+        
+        .pain-point-card:hover, .checkpoint-card:hover, .appendix-screen-item:hover, .sketch-card:hover, .bottom-panel:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-rust);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-rust);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Smartwatch screens shine overlay and lifting hover */
+        .watch-screenshot-container {
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .watch-screenshot-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%);
+            pointer-events: none;
+            transition: var(--transition-smooth);
+            z-index: 5;
+        }
+        
+        .watch-screenshot-container:hover {
+            transform: translateY(-6px) scale(1.05);
+            border-color: var(--accent-rust);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        
+        .watch-screenshot-container:hover::after {
+            background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%);
+        }
+        
+        .screen-preview-box {
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .screen-preview-box::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%);
+            pointer-events: none;
+            transition: var(--transition-smooth);
+            z-index: 5;
+        }
+        
+        .screen-preview-box:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--accent-rust);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+        
+        .screen-preview-box:hover::after {
+            background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%);
+        }
+        
+        /* Staggered load animation delay rules */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .a4-page {
+            animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transition: var(--transition-smooth);
+        }
+        
+        .page-header-line, .poster-header, .grid-row-1, .grid-row-2, .wireflow-section,
+        #page-appendix .editorial-section, #page-appendix .appendix-bottom-grid {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .page-header-line { animation-delay: 0.1s; }
+        .poster-header { animation-delay: 0.2s; }
+        .grid-row-1 { animation-delay: 0.3s; }
+        .grid-row-2 { animation-delay: 0.4s; }
+        .wireflow-section { animation-delay: 0.5s; }
+        
+        #page-appendix .editorial-section:nth-child(1) { animation-delay: 0.2s; }
+        #page-appendix .editorial-section:nth-child(2) { animation-delay: 0.3s; }
+        #page-appendix .editorial-section:nth-child(3) { animation-delay: 0.4s; }
+        #page-appendix .appendix-bottom-grid { animation-delay: 0.5s; }
         
         .workspace {
             display: flex;
@@ -676,6 +901,18 @@
     <!-- PRESENTATION WORKSPACE -->
     <div class="workspace">
         
+        <!-- TOP INTERACTIVE UTILITIES BAR -->
+        <div class="interactive-utility-bar">
+            <div class="utility-logo">
+                <span class="pulse-dot"></span>
+                <span>9105 INTERACTIVE PORTFOLIO ENGINE v2.1</span>
+            </div>
+            <div class="utility-tabs">
+                <button class="tab-btn active" onclick="setTheme('cream')">🪶 Classic Editorial (Cream)</button>
+                <button class="tab-btn" onclick="setTheme('dark')">🕶️ Exhibition Dark (Charcoal)</button>
+            </div>
+        </div>
+        
         <!-- ================= PAGE 1: ACADEMIC PRESENTATION POSTER ================= -->
         <div class="a4-page" id="page-poster">
             <div class="page-header-line">
@@ -1137,5 +1374,22 @@
         
     </div>
 
+    <!-- Interactive Portfolio Logic -->
+    <script>
+        function setTheme(themeName) {
+            const body = document.body;
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (themeName === 'dark') {
+                body.classList.add('theme-dark');
+                buttons[1].classList.add('active');
+            } else {
+                body.classList.remove('theme-dark');
+                buttons[0].classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
