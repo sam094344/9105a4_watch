@@ -8,30 +8,35 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <style>
         /* RESET & SYSTEM COLOR VARIABLES */
         :root {
-            --bg-workspace: #05070A; /* Dark outer workspace */
-            --page-bg: #090D14; /* Deep KTV-night mode dark canvas */
-            --card-bg: #121820; /* Slate-dark card background */
-            --card-border: rgba(255, 255, 255, 0.08); /* Subtle border for dark panels */
-            --card-hover-border: #00E5FF; /* Glowing neon cyan on hover */
-            --text-main: #F0F4F8; /* Crisp off-white headings */
-            --text-muted: #8E9CAE; /* Soft cool slate-grey body text */
+            --bg-workspace: #141721;
+            --page-bg: #1C1F2E;
+            --card-bg: #252A3A;
+            --card-border: rgba(148, 163, 184, 0.12);
+            --card-hover-border: #38BDF8;
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
             
-            --accent-rust: #FF6B4A; /* Sunset Red-Orange warning accent */
-            --accent-rust-light: rgba(255, 107, 74, 0.12); /* Translucent red-orange tag bg */
-            --accent-cyan: #00E5FF; /* Neon Cyan interactive focus */
-            --accent-cyan-light: rgba(0, 229, 255, 0.12);
+            --accent-rust: #FF7A3D; /* 主高亮：珊瑚橙 */
+            --accent-rust-light: rgba(255, 122, 61, 0.15);
+            --accent-cyan: #38BDF8; /* 次高亮：天空蓝 */
+            --accent-cyan-light: rgba(56, 189, 248, 0.12);
+            --accent-violet: #A78BFA; /* 柔紫 */
+            --accent-violet-light: rgba(167, 139, 250, 0.12);
+            --accent-emerald: #34D399; /* 翡翠绿 */
+            --accent-emerald-light: rgba(52, 211, 153, 0.12);
+            --accent-rose: #FB7185; /* 玫瑰粉 */
             
             --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
             
-            --divider-color: #1A222C;
-            --table-header-bg: #1A222C;
-            --watch-border: #303A4A;
+            --divider-color: #313752;
+            --table-header-bg: #2A3048;
+            --watch-border: #3D4560;
         }
         
         * {
@@ -41,7 +46,7 @@
         }
         
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--bg-workspace);
             color: var(--text-main);
             line-height: 1.45;
@@ -62,17 +67,16 @@
         /* A4 PRESENTATION LAYOUT */
         .a4-page {
             width: 1190px;
-            height: 1684px;
+            min-height: 1684px;
             background-color: var(--page-bg);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             padding: 45px 50px;
             border-radius: 4px;
-            border: 1px solid #1A222C;
+            border: 1px solid #252A3A;
         }
         
         /* TOP DECORATIVE HEADER */
@@ -86,7 +90,7 @@
         }
         
         .page-header-line span {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 0.74rem;
             font-weight: 700;
             letter-spacing: 0.15em;
@@ -109,7 +113,9 @@
             font-size: 3.3rem;
             font-weight: 900;
             letter-spacing: -0.015em;
-            color: var(--text-main);
+            background: linear-gradient(90deg, var(--text-main) 0%, var(--accent-rust) 50%, var(--accent-violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1.05;
         }
         
@@ -117,7 +123,7 @@
             font-size: 0.96rem;
             color: var(--text-muted);
             margin-top: 5px;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 500;
             letter-spacing: 0.01em;
         }
@@ -127,7 +133,7 @@
             font-size: 0.76rem;
             color: var(--text-muted);
             line-height: 1.5;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .info-area strong {
@@ -164,7 +170,7 @@
             display: flex;
             align-items: baseline;
             gap: 6px;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 800;
             font-size: 1.05rem;
             color: var(--text-main);
@@ -250,17 +256,21 @@
         .pain-point-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-left: 4.5px solid var(--text-main);
+            border-left: 4.5px solid var(--accent-rust);
             border-radius: 8px;
             padding: 14px 16px;
             box-shadow: var(--shadow-sm);
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
+        .pain-point-card:nth-child(2) { border-left-color: var(--accent-violet); }
+        .pain-point-card:nth-child(3) { border-left-color: var(--accent-cyan); }
+        .pain-point-card:nth-child(4) { border-left-color: var(--accent-emerald); }
+        
         .pain-point-card:hover {
             transform: translateY(-2px);
             border-color: var(--card-hover-border);
-            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.15), var(--shadow-md);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.12), var(--shadow-md);
         }
         
         .timeline-card, .checkpoint-card, .solution-mockup, .highlight-panel, .sketch-card, .appendix-screen-item {
@@ -270,13 +280,90 @@
         .timeline-card:hover, .checkpoint-card:hover, .solution-mockup:hover, .highlight-panel:hover, .sketch-card:hover, .appendix-screen-item:hover {
             transform: translateY(-2px);
             border-color: var(--card-hover-border);
-            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.15), var(--shadow-md);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.12), var(--shadow-md);
+        }
+        
+        /* 艺术化环境约束雷达时间线 */
+        .stressors-timeline {
+            position: relative;
+            padding-left: 26px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        
+        .stressors-timeline::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 7px;
+            bottom: 12px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent-rust) 0%, var(--accent-cyan) 100%);
+            border-radius: 99px;
+            box-shadow: 0 0 8px var(--accent-rust-light);
+        }
+        
+        .stressor-node {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+        }
+        
+        .stressor-node::before {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: 10px;
+            width: 9px;
+            height: 9px;
+            border-radius: 99px;
+            background: var(--page-bg);
+            border: 3px solid var(--accent-rust);
+            box-shadow: 0 0 8px var(--accent-rust);
+            z-index: 2;
+            transition: all 0.25s ease;
+        }
+        
+        .stressor-node:nth-child(2)::before {
+            border-color: var(--accent-violet);
+            box-shadow: 0 0 8px var(--accent-violet);
+        }
+        
+        .stressor-node:nth-child(3)::before {
+            border-color: var(--accent-emerald);
+            box-shadow: 0 0 8px var(--accent-emerald);
+        }
+        
+        .stressor-node:hover::before {
+            transform: scale(1.4);
+            background: var(--accent-rust);
+            box-shadow: 0 0 12px var(--accent-rust);
+        }
+        
+        .stressor-content-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 9px 12px;
+            width: 100%;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .stressor-content-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1), var(--shadow-md);
+            transform: translateX(5px);
         }
         
         .pain-point-card strong {
             font-size: 0.8rem;
             color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.02em;
             display: block;
@@ -334,11 +421,11 @@
         }
         
         .timeline-card:nth-child(2) .circle-marker {
-            background: var(--accent-rust);
+            background: var(--accent-cyan);
         }
         
         .timeline-card:nth-child(3) .circle-marker {
-            background: var(--text-muted);
+            background: var(--accent-violet);
         }
         
         .timeline-card .header {
@@ -353,14 +440,14 @@
         .timeline-card .header strong {
             font-size: 0.74rem;
             color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .timeline-card .header .tag {
             font-size: 0.6rem;
             font-weight: 700;
-            background: var(--accent-rust-light);
-            color: var(--accent-rust);
+            background: var(--accent-cyan-light);
+            color: var(--accent-cyan);
             padding: 1px 4px;
             border-radius: 3px;
         }
@@ -405,8 +492,8 @@
         }
         
         .checkpoint-card .badge {
-            background: var(--text-main);
-            color: #FFFFFF;
+            background: var(--accent-cyan);
+            color: #0F172A;
             font-size: 0.64rem;
             font-weight: 800;
             width: 17px;
@@ -422,7 +509,7 @@
         .checkpoint-card-content strong {
             font-size: 0.74rem;
             color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             display: block;
             margin-bottom: 2px;
         }
@@ -443,7 +530,7 @@
             display: flex;
             align-items: baseline;
             gap: 6px;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 800;
             font-size: 1.05rem;
             color: var(--text-main);
@@ -470,9 +557,9 @@
         
         .click-zone {
             position: absolute;
-            border: 1.5px dashed var(--accent-cyan);
-            background-color: rgba(0, 229, 255, 0.28);
-            box-shadow: 0 0 6px var(--accent-cyan);
+            border: 1.5px dashed var(--accent-emerald);
+            background-color: rgba(52, 211, 153, 0.25);
+            box-shadow: 0 0 6px var(--accent-emerald);
             pointer-events: none;
             z-index: 10;
         }
@@ -506,14 +593,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) invert(100%) contrast(1.3) brightness(1.05);
-            background-color: #FFFFFF;
+            filter: grayscale(100%);
         }
         
         .watch-label {
             font-size: 0.74rem;
             font-weight: 800;
-            color: var(--text-main);
+            color: var(--accent-emerald);
             margin-top: 2px;
         }
         
@@ -526,7 +612,9 @@
         }
         
         .flow-arrow {
-            color: var(--text-muted);
+            background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-emerald) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 900;
             font-size: 1.25rem;
             padding-bottom: 32px;
@@ -538,9 +626,10 @@
             justify-content: space-between;
             font-size: 0.72rem;
             color: var(--text-muted);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             border-top: 1px solid var(--card-border);
             padding-top: 6px;
+            margin-top: auto;
         }
         
         /* PAGE 2 APPENDIX SPECIFIC CSS */
@@ -576,8 +665,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) invert(100%) contrast(1.3) brightness(1.05);
-            background-color: #FFFFFF;
+            filter: grayscale(100%);
         }
         
         .appendix-screen-item .screen-info {
@@ -590,7 +678,7 @@
         }
         
         .appendix-screen-item .screen-info h4 {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 0.76rem;
             font-weight: 800;
             color: var(--text-main);
@@ -661,7 +749,7 @@
         
         .heuristic-table th {
             background: var(--table-header-bg);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 800;
             text-transform: uppercase;
             font-size: 0.68rem;
@@ -672,22 +760,26 @@
         .appendix-bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1.05fr 1fr;
-            gap: 12px;
+            gap: 10px;
+            flex: 1;
+            align-content: start;
         }
         
         .bottom-panel {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 10px;
-            padding: 6px 10px;
+            padding: 8px 10px;
             box-shadow: var(--shadow-sm);
             display: flex;
             flex-direction: column;
             gap: 2px;
+            min-width: 0; /* 防止子元素超长单词撑开网格列 */
+            overflow: hidden;
         }
         
         .bottom-panel h4 {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 0.8rem;
             font-weight: 800;
             color: var(--text-main);
@@ -711,9 +803,8 @@
             padding: 5px 8px;
             font-size: 0.64rem;
             color: var(--accent-rust);
-            font-family: Consolas, Monaco, monospace;
-            overflow-wrap: break-word;
-            word-break: break-word;
+            font-family: 'JetBrains Mono', Consolas, monospace;
+            word-break: break-all !important;
             margin-top: 2px;
         }
         
@@ -722,24 +813,50 @@
             width: 100%;
             font-size: 0.56rem;
             line-height: 1.2;
-            padding: 3px 5px;
+            padding: 4px 6px;
             box-sizing: border-box;
-            background-color: #F0ECE4;
-            border: 1px solid #D6CEBE;
+            background-color: rgba(255, 107, 0, 0.08);
+            border: 1px solid rgba(255, 107, 0, 0.18);
             border-radius: 4px;
-            font-family: Consolas, Monaco, monospace;
+            font-family: 'JetBrains Mono', Consolas, monospace;
             color: var(--accent-rust);
-            overflow-wrap: break-word;
-            word-break: break-word;
+            word-break: break-all !important;
             white-space: pre-wrap;
             margin-top: 3px;
             letter-spacing: 0.02em;
         }
         
+        .figma-link {
+            display: block;
+            width: 100%;
+            font-size: 0.56rem;
+            line-height: 1.25;
+            padding: 5px 8px;
+            box-sizing: border-box;
+            background-color: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 5px;
+            font-family: 'JetBrains Mono', Consolas, monospace;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            word-break: break-all !important;
+            white-space: pre-wrap;
+            margin-top: 3px;
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease;
+        }
+        
+        .figma-link:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.35);
+            color: var(--accent-cyan);
+            box-shadow: 0 2px 8px rgba(56, 189, 248, 0.08);
+        }
+        
         code {
-            font-family: Consolas, Monaco, monospace;
-            background-color: #F0ECE4;
-            border: 1px solid #D6CEBE;
+            font-family: 'JetBrains Mono', Consolas, monospace;
+            background-color: rgba(255, 107, 0, 0.08);
+            border: 1px solid rgba(255, 107, 0, 0.18);
             border-radius: 4px;
             padding: 2px 8px;
             font-size: 0.72rem;
@@ -748,70 +865,13 @@
             display: inline-block;
             vertical-align: middle;
             letter-spacing: 0.05em;
-            overflow-wrap: break-word;
-            word-break: break-word;
+            word-break: break-all !important;
             white-space: pre-wrap;
             max-width: 100%;
         }
         
         
-        /* APPENDIX PAGE (LIGHT DOCUMENT STYLE - "附录不要海报") */
-        #page-appendix {
-            background-color: #FAF8F5 !important;
-            color: #24292E !important;
-            border: 1px solid #D6CEBE !important;
-            box-shadow: 0 20px 50px rgba(80, 75, 65, 0.08) !important;
-        }
-        #page-appendix .page-header-line {
-            border-bottom-color: #24292E !important;
-        }
-        #page-appendix .page-header-line span {
-            color: #24292E !important;
-        }
-        #page-appendix .editorial-section {
-            border-top-color: #24292E !important;
-        }
-        #page-appendix .editorial-section-title {
-            color: #24292E !important;
-        }
-        #page-appendix p.desc, #page-appendix .sketch-card-desc p, #page-appendix .bottom-panel p {
-            color: #5C636A !important;
-        }
-        #page-appendix .appendix-screen-item, #page-appendix .sketch-card, #page-appendix .bottom-panel {
-            background: #FFFFFF !important;
-            border-color: #E8E2D9 !important;
-            box-shadow: 0 4px 12px rgba(120, 115, 105, 0.04) !important;
-        }
-        #page-appendix .appendix-screen-item:hover, #page-appendix .sketch-card:hover, #page-appendix .bottom-panel:hover {
-            border-color: #C8BDAA !important;
-            box-shadow: 0 6px 20px rgba(120, 115, 105, 0.12) !important;
-            transform: translateY(-2px) !important;
-        }
-        #page-appendix h4, #page-appendix .appendix-screen-item h4 {
-            color: #24292E !important;
-        }
-        #page-appendix .heuristic-table {
-            background: #FFFFFF !important;
-            border-color: #E8E2D9 !important;
-        }
-        #page-appendix .heuristic-table th {
-            background: #F0ECE4 !important;
-            color: #24292E !important;
-            border-color: #E8E2D9 !important;
-        }
-        #page-appendix .heuristic-table td {
-            color: #24292E !important;
-            border-color: #E8E2D9 !important;
-        }
-        #page-appendix code, #page-appendix .bottom-panel code {
-            background-color: #F0ECE4 !important;
-            border-color: #D6CEBE !important;
-            color: #BE5C4A !important;
-        }
-        #page-appendix .footer-note {
-            border-top-color: #E8E2D9 !important;
-            color: #5C636A !important;
-        }
+
         
         /* PRINT MEDIA STYLES FOR EXACT 2-PAGE A4 EXPORT */
         @media print {
@@ -837,7 +897,8 @@
                 break-after: page;
                 /* Avoid print-time scaling anomalies */
                 width: 1190px;
-                height: 1684px;
+                min-height: 1684px;
+                overflow: visible;
             }
             @page {
                 size: 1190px 1684px;
@@ -855,13 +916,13 @@
         <div class="a4-page" id="page-poster">
             <div class="page-header-line">
                 <span>IDEA9105 Design Presentation</span>
-                <span>KTV Helper Smartwear Companion Poster</span>
+                <span style="color: var(--accent-cyan);">KTV Helper Smartwear Companion Poster</span>
             </div>
             
             <div class="poster-header">
                 <div class="title-area">
                     <h1>KTV Helper: Smartwear Companion</h1>
-                    <p class="subtitle">Wrist-Based Interaction Design for Real-Time Service Requests, Physiological Safeguards, and Split-Billing</p>
+                    <p class="subtitle">Wrist-Based Interaction Design for Song Requesting, Room Services, and Media Controls</p>
                 </div>
                 <div class="info-area">
                     Course: <strong>IDEA9105 Interaction Design</strong><br>
@@ -882,10 +943,10 @@
                     <div class="design-solution-split" style="margin-bottom: 14px;">
                         <div class="solution-text-block">
                             <p class="editorial-lead">
-                                A wrist-worn smartwatch companion designed to mitigate the auditory, cognitive, and physiological barriers inherent to high-decibel KTV social environments.
+                                A wrist-worn smartwatch companion designed to streamline the KTV experience, featuring a unique video download page exclusive to Apple Watch for purchasing recorded singing clips.
                             </p>
                             <p class="editorial-body">
-                                <strong>Device Division of Labor:</strong> The Apple Watch companion focuses on low-input, ambient actions (continuous PPG safety vitals, 2s hold-to-confirm staff calls, and one-tap emergency ride dispatch). The paired iPhone application handles complex setup, song library cataloging, and group split-bill payment details.
+                                <strong>Core Task Focus:</strong> Based on tutor feedback, the Apple Watch companion prioritizes essential in-room functions—song requesting, ordering snacks, extending room time, and adjusting audio volume. High-definition prototypes have been downgraded into interactive greyscale low-fidelity wireflows to emphasize core task usability over peripheral aesthetics.
                             </p>
                         </div>
                         <div class="solution-mockup">
@@ -896,27 +957,30 @@
                         </div>
                     </div>
                     <div class="constraints-container" style="margin-top: 15px;">
-                        <strong style="font-size: 0.7rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px; font-family: 'Outfit', sans-serif;">Target Environment Constraints:</strong>
-                        <div class="constraints-list" style="display: flex; flex-direction: column; gap: 8px;">
-                            <div style="background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; box-shadow: var(--shadow-sm);">
-                                <span style="font-size: 0.8rem; line-height: 1.1; margin-top: 1px;">🔊</span>
-                                <div>
-                                    <strong style="font-size: 0.72rem; color: var(--text-main); font-family: 'Outfit', sans-serif; display: block; margin-bottom: 1px;">Auditory Overload (&gt;85dB)</strong>
-                                    <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">Ambient noise masks normal audio alarms, requiring high-intensity haptics for alerts.</p>
+                        <strong style="font-size: 0.72rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 10px; font-family: 'Space Grotesk', sans-serif;">Target Environment Constraints</strong>
+                        <div class="stressors-timeline">
+                            <div class="stressor-node">
+                                <div class="stressor-content-card">
+                                    <strong style="font-size: 0.76rem; color: var(--text-main); font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                                        <span>🔊</span> Auditory Overload (&gt;85dB)
+                                    </strong>
+                                    <p style="font-size: 0.64rem; line-height: 1.35; color: var(--text-muted);">Ambient noise masks standard acoustic alerts, demanding high-intensity tactile LRA haptics.</p>
                                 </div>
                             </div>
-                            <div style="background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; box-shadow: var(--shadow-sm);">
-                                <span style="font-size: 0.8rem; line-height: 1.1; margin-top: 1px;">🌙</span>
-                                <div>
-                                    <strong style="font-size: 0.72rem; color: var(--text-main); font-family: 'Outfit', sans-serif; display: block; margin-bottom: 1px;">Extreme Low-Light Rooms</strong>
-                                    <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">Dimly lit rooms demand high-contrast OLED dark canvases and oversized tap targets.</p>
+                            <div class="stressor-node">
+                                <div class="stressor-content-card">
+                                    <strong style="font-size: 0.76rem; color: var(--text-main); font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                                        <span>🌙</span> Extreme Low-Light Rooms
+                                    </strong>
+                                    <p style="font-size: 0.64rem; line-height: 1.35; color: var(--text-muted);">Dimly lit private rooms require high-contrast dark OLED canvases and oversized tap targets.</p>
                                 </div>
                             </div>
-                            <div style="background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; box-shadow: var(--shadow-sm);">
-                                <span style="font-size: 0.8rem; line-height: 1.1; margin-top: 1px;">🥴</span>
-                                <div>
-                                    <strong style="font-size: 0.72rem; color: var(--text-main); font-family: 'Outfit', sans-serif; display: block; margin-bottom: 1px;">Cognitive & Motor Decline</strong>
-                                    <p style="font-size: 0.64rem; line-height: 1.3; color: var(--text-muted);">Intoxication degrades coordination, necessitating 2-second hold-to-confirm delay buffers.</p>
+                            <div class="stressor-node">
+                                <div class="stressor-content-card">
+                                    <strong style="font-size: 0.76rem; color: var(--text-main); font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+                                        <span>🥴</span> Cognitive & Motor Decline
+                                    </strong>
+                                    <p style="font-size: 0.64rem; line-height: 1.35; color: var(--text-muted);">Intoxication impairs motor coordination, requiring 2-second hold confirmation delay buffers.</p>
                                 </div>
                             </div>
                         </div>
@@ -1061,9 +1125,9 @@
             <div class="wireflow-section">
                 <div class="wireflow-section-title">
                     <span class="num">05</span>
-                    <span>Primary Wireflow Journey: Vitals Care & Assistance Request Workflow</span>
+                    <span>Primary Wireflow Journey: Core KTV Room Services & Media Control</span>
                 </div>
-                <p style="font-size: 0.74rem; color: var(--text-muted); margin-bottom: 4px;">A single, connected user flow tracing physiological strain monitoring and resolution: (S1) Home View widget triggers PPG vitals check, (S2) heart rate warning navigates to services, (S3) 2x2 grid menu opens, (S4) 2s hold-to-confirm avoids false alarms under intoxication, (S5) staff call confirmed with haptics, (S6) transit booking, (S7) ride arriving with license code tracker.</p>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin-bottom: 4px;">An interactive greyscale low-fidelity wireflow focusing on core tasks: (S1) Home View for current song playback, (S2) navigating to service ordering, (S3) ordering snacks and drinks, (S4) extending room time, (S5) adjusting audio volume, (S6) accessing the unique video download page, and (S7) purchasing recorded singing clips.</p>
                 
                 <div class="wireflow-grid">
                     <!-- S1 -->
@@ -1073,7 +1137,7 @@
                             <div class="click-zone cz-home-vitals"></div>
                         </div>
                         <span class="watch-label">1. Home View</span>
-                        <span class="watch-desc">Tap Care+ heart widget</span>
+                        <span class="watch-desc">View current song playback</span>
                     </div>
                     <span class="flow-arrow">→</span>
                     
@@ -1083,8 +1147,8 @@
                             <img src="./assets/screen_3.png" alt="Watch S3">
                             <div class="click-zone cz-vitals-services"></div>
                         </div>
-                        <span class="watch-label">2. Vitals Alert</span>
-                        <span class="watch-desc">PPG warning; tap Action</span>
+                        <span class="watch-label">2. Order Snacks</span>
+                        <span class="watch-desc">Tap to order snacks</span>
                     </div>
                     <span class="flow-arrow">→</span>
                     
@@ -1094,8 +1158,8 @@
                             <img src="./assets/screen_2.png" alt="Watch S2">
                             <div class="click-zone cz-services-staff"></div>
                         </div>
-                        <span class="watch-label">3. Service Menu</span>
-                        <span class="watch-desc">Tap 2x2 Call Staff tile</span>
+                        <span class="watch-label">3. Audio Volume</span>
+                        <span class="watch-desc">Adjust audio volume</span>
                     </div>
                     <span class="flow-arrow">→</span>
                     
@@ -1105,8 +1169,8 @@
                             <img src="./assets/screen_4.png" alt="Watch S4">
                             <div class="click-zone cz-staff-hold"></div>
                         </div>
-                        <span class="watch-label">4. Call Staff</span>
-                        <span class="watch-desc">2s hold to confirm call</span>
+                        <span class="watch-label">4. Extend Time</span>
+                        <span class="watch-desc">Extend room time</span>
                     </div>
                     <span class="flow-arrow">→</span>
                     
@@ -1116,8 +1180,8 @@
                             <img src="./assets/screen_5.png" alt="Watch S5">
                             <div class="click-zone cz-staff-back"></div>
                         </div>
-                        <span class="watch-label">5. Dispatched</span>
-                        <span class="watch-desc">Staff called; tap ‹ back</span>
+                        <span class="watch-label">5. Video Clips</span>
+                        <span class="watch-desc">Video download page</span>
                     </div>
                     <span class="flow-arrow">→</span>
                     
@@ -1126,8 +1190,8 @@
                         <div class="watch-screenshot-container">
                             <img src="./assets/screen_6.png" alt="Watch S6">
                         </div>
-                        <span class="watch-label">6. Hailing Ride</span>
-                        <span class="watch-desc">Taxi request booking</span>
+                        <span class="watch-label">6. Purchase Clip</span>
+                        <span class="watch-desc">Purchase singing clips</span>
                     </div>
                     <span class="flow-arrow">→</span>
                     
@@ -1136,8 +1200,8 @@
                         <div class="watch-screenshot-container">
                             <img src="./assets/screen_7.png" alt="Watch S7">
                         </div>
-                        <span class="watch-label">7. Ride Active</span>
-                        <span class="watch-desc">Incoming taxi plate code</span>
+                        <span class="watch-label">7. Evaluation</span>
+                        <span class="watch-desc">Post-service evaluation</span>
                     </div>
                 </div>
             </div>
@@ -1149,13 +1213,13 @@
         </div>
         
         <!-- ================= PAGE 2: APPENDIX & HEURISTICS ================= -->
-        <div class="a4-page" id="page-appendix">
+        <div class="a4-page" id="page-appendix-1">
             <div class="appendix-doc-header" style="border-bottom: 1.5px solid var(--text-main); padding-bottom: 10px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-end;">
                 <div>
-                    <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.02em;">Supporting Appendix & Design Evidence</h2>
-                    <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Full 10-Screen Interface Set, Hand-Drawn Sketches, Usability Review, and Consultation Logs</p>
+                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.02em;">Supporting Appendix</h2>
+                    <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Full 10-Screen Interface Set, Hand-Drawn Sketches, Usability Review & References</p>
                 </div>
-                <div style="text-align: right; font-size: 0.7rem; color: var(--text-muted); font-family: 'Outfit', sans-serif; line-height: 1.4;">
+                <div style="text-align: right; font-size: 0.7rem; color: var(--text-muted); font-family: 'Space Grotesk', sans-serif; line-height: 1.4;">
                     Course: <strong>IDEA9105 Interaction Design</strong><br>
                     Student: <strong>Yingtai Yan (550226921)</strong>
                 </div>
@@ -1187,43 +1251,43 @@
                     <div class="appendix-screen-item">
                         <div class="screen-preview-box"><img src="./assets/screen_3.png" alt="S3"></div>
                         <div class="screen-info">
-                            <h4>3. Heart Rate</h4>
-                            <p>PPG sensor display.</p>
+                            <h4>3. Order Snacks</h4>
+                            <p>Menu and ordering.</p>
                         </div>
                     </div>
                     <div class="appendix-screen-item">
                         <div class="screen-preview-box"><img src="./assets/screen_4.png" alt="S4"></div>
                         <div class="screen-info">
-                            <h4>4. Call Water 1</h4>
-                            <p>Intermediate calling state.</p>
+                            <h4>4. Audio Volume</h4>
+                            <p>Music control dial.</p>
                         </div>
                     </div>
                     <div class="appendix-screen-item">
                         <div class="screen-preview-box"><img src="./assets/screen_5.png" alt="S5"></div>
                         <div class="screen-info">
-                            <h4>5. Water Request</h4>
-                            <p>Staff confirmation alert.</p>
+                            <h4>5. Extend Time</h4>
+                            <p>Add 30/60 mins.</p>
                         </div>
                     </div>
                     <div class="appendix-screen-item">
                         <div class="screen-preview-box"><img src="./assets/screen_6.png" alt="S6"></div>
                         <div class="screen-info">
-                            <h4>6. Hail Ride 1</h4>
-                            <p>Taxi booking loader.</p>
+                            <h4>6. Video Clips</h4>
+                            <p>Exclusive watch page.</p>
                         </div>
                     </div>
                     <div class="appendix-screen-item">
                         <div class="screen-preview-box"><img src="./assets/screen_7.png" alt="S7"></div>
                         <div class="screen-info">
-                            <h4>7. Ride Arrived</h4>
-                            <p>Driver plate code.</p>
+                            <h4>7. Purchase Clip</h4>
+                            <p>Buy recorded singing.</p>
                         </div>
                     </div>
                     <div class="appendix-screen-item">
                         <div class="screen-preview-box"><img src="./assets/screen_8.png" alt="S8"></div>
                         <div class="screen-info">
-                            <h4>8. View Bill</h4>
-                            <p>Total room fees list.</p>
+                            <h4>8. Evaluation</h4>
+                            <p>Post-service rating.</p>
                         </div>
                     </div>
                     <div class="appendix-screen-item">
@@ -1295,7 +1359,7 @@
             </div>
             
             <!-- SECTION C: HEURISTICS TABLE -->
-            <div class="editorial-section" style="margin-bottom: 15px;">
+            <div class="editorial-section" style="margin-bottom: 12px;">
                 <div class="editorial-section-title">
                     <span class="num">C</span>
                     <span>Usability Review & Heuristic Reflections</span>
@@ -1317,7 +1381,7 @@
                         <tr>
                             <td><strong>Error Prevention</strong></td>
                             <td>Intoxication impairs psychomotor skills, causing accidental touch inputs on adjacent control elements.</td>
-                            <td>Integrated a 2-second touch-and-hold delay timer for high-consequence operations (Safe Ride, Care+ trigger) to permit cancellation.</td>
+                            <td>Integrated a 2-second touch-and-hold delay timer for high-consequence operations (Purchasing clips, Extending time) to permit cancellation.</td>
                         </tr>
                         <tr>
                             <td><strong>Match System & Real World</strong></td>
@@ -1353,11 +1417,11 @@
                     <p>Access the high-fidelity design workspace and interactive smartwatch companion prototype via the verified paths below:</p>
                     <div style="margin-top: 4px;">
                         <span style="font-size: 0.65rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 2px;">Figma Design Workspace:</span>
-                        <code>https://www.figma.com/design/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?t=3a3D1PHtBif12Ceh-1</code>
+                        <a href="https://www.figma.com/design/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?t=3a3D1PHtBif12Ceh-1" target="_blank" class="figma-link">https://www.figma.com/design/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?t=3a3D1PHtBif12Ceh-1</a>
                     </div>
                     <div style="margin-top: 4px;">
                         <span style="font-size: 0.65rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 2px;">Interactive Watch Prototype:</span>
-                        <code>https://www.figma.com/proto/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?node-id=1-2&scaling=scale-down</code>
+                        <a href="https://www.figma.com/proto/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?node-id=1-2&scaling=scale-down" target="_blank" class="figma-link">https://www.figma.com/proto/UAzEmNfMZdeTrRSIGjmM0f/Final-Yingtai-Yan?node-id=1-2&scaling=scale-down</a>
                     </div>
                 </div>
                 
@@ -1377,10 +1441,9 @@
                 </div>
                 
             </div>
-            
             <div class="footer-note">
-                <span>KTV Helper Smartwear Companion Appendix | Prepared for Grade Verification</span>
-                <span>Page 2 of 2 | Supporting Evidence Density: Max</span>
+                <span>KTV Helper Smartwear Companion Appendix | Complete Supporting Evidence</span>
+                <span>Page 2 of 2 | Supporting Evidence Density: High</span>
             </div>
         </div>
         
